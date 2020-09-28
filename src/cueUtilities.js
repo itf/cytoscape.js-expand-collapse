@@ -209,7 +209,10 @@ module.exports = function (params, cy, api) {
       });
 
       cy.on('remove', 'node', data.eRemove = function () {
-        clearDraws();
+        const node = evt.target;
+        if (node == nodeWithRenderedCue){
+          clearDraws();
+        }      
       });
 
       var ur;
